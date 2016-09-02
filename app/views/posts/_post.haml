@@ -1,0 +1,69 @@
+%article.large-padding.white.top-space
+  /Z
+
+  .text-left.relative
+    =circle_img post.user.avatar.url(:medium),50
+    .quitarMargenArriba.MargenIzquierdo
+      = link_to post.user.username , post.user, class:"indianRed-text NoUnderline lighter"
+      .line-block.text-right=post.area
+ 
+  
+  %p.top-space.text-left.agregarMargenArriba.letraPost=post.body
+
+  %ul.float-Right.top-space
+    /boton me gusta
+    %li
+      %button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--primary.like{for:"#onclick-megusta_",:id => "#{post.id}" } 
+        .material-icons
+          favorite
+    %li
+      %button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-button--primary
+        .material-icons
+          favorite_border
+
+    
+
+
+  %div.agregarMargenArriba
+    %p.top-space.text-left.agregarMargenArriba.black-text.line{:id => "likes_#{post.id}"}
+      =post.likes.count 
+    %p.top-space.text-left.agregarMargenArriba.black-text.line
+      Me gusta
+      
+    %p.top-space.text-left.agregarMargenArriba.black-text.line
+      0
+      
+    %p.top-space.text-left.agregarMargenArriba.black-text.line
+      No me gusta 
+
+  
+   
+  %div{:id => "comentarios_#{post.id}"}
+    = render post.comments
+    
+
+  %div.ocultar
+    =form_for [post, post.likes.build], remote: true do |f|
+      = f.submit 'favorite', id:"onclick-megusta_#{post.id}"
+
+
+
+  =form_for [post, post.comments.build], remote: true do |f|
+   
+    .mdl-textfield.mdl-js-textfield.full-width
+      = f.text_field :body,class:"mdl-textfield__input",type:"text"  ,id: "sample1"
+      = f.label :body, "Comment...",class:"mdl-textfield__label",for: "sample1"
+      .ocultar.actions.text-right
+        = f.submit 'Enviar', class:"mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+
+
+
+  
+  
+
+  
+
+
+
+
+

@@ -33,6 +33,31 @@ gem 'haml-rails'
 
 gem 'devise', github: "plataformatec/devise"
 
+gem 'flexbox_rb'
+
+gem 'annotate'
+
+gem "best_in_place", "~> 3.0.1"
+
+
+gem 'autosize-rails'
+
+gem "paperclip" ,"~> 5.0.0beta1"
+
+gem "remotipart", github:"urielhdz/remotipart"
+
+#AASM para state machines
+gem "aasm"
+
+#Activemodel serializers xml 
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+
+#Draper para nuestros decoradores
+gem "draper", github:"audionerd/draper",branch:"rails5"
+
+#PHONEGAP
+gem 'phonegap-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

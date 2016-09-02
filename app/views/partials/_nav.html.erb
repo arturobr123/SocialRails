@@ -1,0 +1,49 @@
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+
+      <%=form_tag "/search/create", method: :get, remote: true, id:"search-form" do  %>
+          <%=text_field_tag :keyword, nil, placeholder: "Results abajo(buscar Posts)"%>
+          <%=content_tag :button, type: :submit do%>
+            Buscar
+          <% end %>
+        <% end %>
+
+      <div class="mdl-layout-spacer"></div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <%= link_to current_user.username , current_user, class:"white-text right-space"%> 
+        
+        <%= link_to "Cerrar sesión" , destroy_user_session_path, method: :delete ,class:"white-text"%> 
+
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+      </div>
+    </div>
+
+    
+  </header>
+
+
+    <div class="mdl-layout__drawer ">
+    <span class="mdl-layout-title">Talk</span>
+    <nav class="mdl-navigation">
+
+      <%= link_to "#Love", {controller:"main", action:"changeArea", my_param: 23}, class:"mdl-navigation__link nav_words" %>
+
+      <%= link_to "#Talk", {controller:"main", action:"changeArea", my_param: 0}, class:"mdl-navigation__link nav_words" %>
+
+      <a class="mdl-navigation__link nav_words" onclick="window.location = 'changeArea'" href="">#Love</a>
+      <a class="mdl-navigation__link nav_words" href="">#School</a>
+      <a class="mdl-navigation__link nav_words" href="">#Sports</a>
+      <a class="mdl-navigation__link nav_words" href="">#Videogames</a>
+
+
+    </nav>
+  </div>
+
+
+  
+  

@@ -1,0 +1,1 @@
+$("#posts .data").prepend("<%= j render @postss %>")

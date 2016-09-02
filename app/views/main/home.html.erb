@@ -1,2 +1,54 @@
-<h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+<div class="top-space">
+	<div class="row left-xs left-space">
+
+		<div class="col-xs-8 col-md-7 ">
+		    <div class="box">
+
+		    	<div class="row">
+
+		    		
+
+					<div class="col-xs-10 col-sm">
+					    <div class="box">
+					    	<div class="white large-padding">  <%= render "posts/form" %>  </div>
+
+					    	<div id="posts">
+					    		<div id="resultados"></div> <!-- buscador -->
+					    		
+					    		<div class="data"> <%= render @postss %> </div>
+					    		
+								
+								
+							</div>
+
+
+					  
+
+					    </div>
+					</div>
+
+					
+
+
+
+		    	</div>
+
+		    </div>
+		</div>
+
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
